@@ -24,7 +24,7 @@ def test_person_can_grow_older_2(person):
 
 
 @given(builds(Person, age=integers().filter(lambda x: x > 100)))
-def test_person_can_grow_older_2(person):
+def test_person_cannot_grow_older(person):
     with pytest.raises(ValueError):
         person.grow_older()
 
