@@ -4,7 +4,6 @@ from python_pytest.db_interaction import User, Base, engine, get_session
 
 def db_set_up(session):
     Base.metadata.create_all(bind=engine)
-    # session.commit()
 
 
 def db_tear_down(session):
