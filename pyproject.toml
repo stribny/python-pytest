@@ -6,12 +6,13 @@ authors = ["Petr Stribny <petrstribny@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-pytest-sugar = "^0.9.4"
-hypothesis = "^5.46.0"
 sqlalchemy = "^1.3.22"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pytest-sugar = "^0.9.4"
+hypothesis = "^5.46.0"
+faker = "^5.4.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
