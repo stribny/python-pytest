@@ -1,2 +1,13 @@
-def add(num1: int, num2: int) -> int:
-    return num1 + num2
+from python_pytest.asserts import add
+
+
+def test_add_can_add_numbers():
+    # given
+    num = 3
+    num2 = 45
+
+    # when
+    result = add(num, num2)
+
+    # then
+    assert result == 48
