@@ -1,5 +1,5 @@
 import pytest
-from python_pytest.asserts import add
+from python_pytest.basics import add
 
 
 @pytest.mark.parametrize("num,num2,result", [
