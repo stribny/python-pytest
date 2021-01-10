@@ -2,6 +2,11 @@ import pytest
 from python_pytest.db_interaction import User, Base, engine, get_session
 
 
+@pytest.fixture
+def allowed_names():
+    return ["Peter", "Mark", "Mary"]
+
+
 def db_set_up(session):
     Base.metadata.create_all(bind=engine)
 
