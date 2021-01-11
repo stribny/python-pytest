@@ -1,6 +1,3 @@
-from dataclasses import dataclass
-
-
 def is_color(code: str) -> bool:
     if not code:
         return False
