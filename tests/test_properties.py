@@ -4,7 +4,7 @@ from hypothesis.strategies import integers, text, datetimes, from_regex, builds,
 from python_pytest.properties import is_first_name, is_before_datetime, Person
 
 
-@given(integers().filter(lambda x: x > 0 and x < 101))
+@given(integers(1, 100))
 def test_person_can_grow_older(age):
     # given
     person = Person(age=age)
@@ -16,14 +16,14 @@ def test_person_can_grow_older(age):
     person.age == age + 1
 
 
-@given(builds(Person, age=integers().filter(lambda x: x > 0 and x < 101)))
+@given(builds(Person, age=integers(1, 100)))
 def test_person_can_grow_older_2(person):
     current_age = person.age
     person.grow_older()
     person.age == current_age + 1
 
 
-@given(builds(Person, age=integers().filter(lambda x: x > 100)))
+@given(builds(Person, age=integers(min_value=101)))
 def test_person_cannot_grow_older(person):
     with pytest.raises(ValueError):
         person.grow_older()
