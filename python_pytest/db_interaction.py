@@ -16,7 +16,6 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-
 class User(Base):
     __tablename__ = "users"
 
@@ -25,11 +24,7 @@ class User(Base):
 
 
 def get_session() -> Session:
-    session = SessionLocal()
-    try:
-        yield session
-    finally:
-        session.close()
+    return SessionLocal()
 
 
 def save_user(session: Session, user: User) -> None:

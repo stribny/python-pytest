@@ -14,7 +14,7 @@ def db_set_up(session):
 def db_tear_down(session):
     session.query(User).delete()
     session.commit()
-    session.remove()
+    session.close()
 
 
 @pytest.fixture

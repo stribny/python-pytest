@@ -1,7 +1,7 @@
 from python_pytest.db_interaction import User, save_user
 
 
-def user_can_be_saved(session):
+def test_user_can_be_saved(session):
     # given
     user_id = 1
     user_email = "example@example.com"
@@ -11,5 +11,5 @@ def user_can_be_saved(session):
     save_user(session, user)
 
     # then
-    saved_user = session.query(User).filter(User.id == user_id)
+    saved_user = session.query(User).filter(User.id == user_id).first()
     assert saved_user.email == user_email
